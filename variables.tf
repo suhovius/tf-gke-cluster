@@ -14,8 +14,3 @@ variable "GKE_NUM_NODES" {
   default     = 2
   description = "node pool"
 }
-
-variable "GCS_BUCKET" {
-  type        = string
-  description = "GCS bucket name"
-}

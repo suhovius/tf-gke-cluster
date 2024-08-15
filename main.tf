@@ -7,7 +7,7 @@ module "gke_cluster" {
 
 terraform {
   backend "gcs" {
-    bucket = var.GCS_BUCKET
+    bucket = "tf-gke-state-430719"
     prefix = "terraform/state"
   }
 }
