@@ -22,23 +22,23 @@ variable "TF_STATE_BUCKET_LOCATION" {
 }
 
 variable "GITHUB_OWNER" {
-  type = string
+  type        = string
   description = "GitHub owner repository to use"
 }
 
 variable "GITHUB_TOKEN" {
-  type = string
+  type        = string
   description = "GitHub personal access token"
 }
 
 variable "FLUX_GITHUB_REPO" {
-  type = string
-  default = "flux-gitops"
+  type        = string
+  default     = "flux-gitops"
   description = "Flux GitOps repository"
 }
 
 variable "FLUX_GITHUB_TARGET_PATH" {
-  type = string
-  default = "clusters"
+  type        = string
+  default     = "clusters"
   description = "Flux manifests subdirectory"
 }
