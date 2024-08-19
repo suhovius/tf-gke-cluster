@@ -38,18 +38,11 @@ module "github_repository" {
   public_key_openssh_title = "flux0"
 }
 
-/*
 module "gke_cluster" {
   source         = "git::https://github.com/suhovius/tf-google-gke-cluster.git"
   GOOGLE_REGION  = var.GOOGLE_REGION
   GOOGLE_PROJECT = var.GOOGLE_PROJECT
   GKE_NUM_NODES  = var.GKE_NUM_NODES
-}
-*/
-
-
-module "kind_cluster" {
-  source = "git::github.com/suhovius/tf-kind-cluster.git"
 }
 
 module "flux_bootstrap" {
@@ -65,17 +58,9 @@ module "tls_private_key" {
   algorithm = "RSA"
 }
 
-/*
 terraform { 
   backend "gcs" {
     bucket = "tf-state-430719"
     prefix = "terraform/state"
-  }
-}
-*/
-
-terraform {
-  backend "local" {
-    path = "terraform.tfstate"
   }
 }
