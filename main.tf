@@ -1,19 +1,3 @@
-/*
-It does not look very practical to create terraform state bucket from the terraform
-As it breaks the state in the intial setup, brings issues with terraform providers compatibility
-and moreover when resources are deleted, bucket is also deleted and so terraform fails to save state
-of the deleted resources, as there is no ways to enforoce the order of resources removal
-Below you can see the experiments of such bucket creation and import in the commeted lines below
-*/
-
-/*
-import {
-  id = "cluster-test-430719/tf-state-430719"
-  to = google_storage_bucket.tf_state
-}
-*/
-
-/*
 resource "google_storage_bucket" "tf_state" {
   name          = "tf-state-430719"
   project       = var.GOOGLE_PROJECT
@@ -27,7 +11,6 @@ resource "google_storage_bucket" "tf_state" {
     enabled = true
   }
 }
-*/
 
 module "github_repository" {
   source                   = "git::https://github.com/suhovius/tf-github-repository.git"
