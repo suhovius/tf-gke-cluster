@@ -40,7 +40,8 @@ terraform {
 
 # Resources removal
 
-* it must be performed in a vise versa way.
+It must be performed in a vice versa way.
+
 * Comment the gcs backend definition
 * Run `terraform init -migrate-state` to migrate state to the local file
 * Now infrastructure can be removed with `terraform destroy` including with the bucked that have been used as terraform state storage
