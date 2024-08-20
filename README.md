@@ -1,5 +1,5 @@
 # tf-gke-cluster
-DevOps Course. Terraform Google Kubernetes Engine Cluster 
+DevOps Course. Terraform Google Kubernetes Engine Cluster + GitOps Flux 
 
 # Setup
 Pay attention to chicken-egg problem of the dependant state bucket.
