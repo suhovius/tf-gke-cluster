@@ -49,8 +49,8 @@ module "flux_bootstrap" {
   source            = "git::https://github.com/suhovius/tf-fluxcd-flux-bootstrap.git"
   github_repository = module.github_repository.full_name
   github_token      = var.GITHUB_TOKEN
-  private_key       = module.tls_private_key.private_key_pem # check if we need this attribute
-  config_path       = module.kind_cluster.kubeconfig
+  private_key       = module.tls_private_key.private_key_pem
+  config_path       = module.gke_cluster.kubeconfig
 }
 
 module "tls_private_key" {
@@ -58,7 +58,7 @@ module "tls_private_key" {
   algorithm = "RSA"
 }
 
-terraform { 
+terraform {
   backend "gcs" {
     bucket = "tf-state-430719"
     prefix = "terraform/state"
